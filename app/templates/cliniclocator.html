@@ -51,7 +51,7 @@
         {% if clinic.lat and clinic.lon %}
             // Add your fields to the ppup on the next line.
             // add if statement
-            {% if clinic.rating >= 80 %}
+            {% if clinic.rating >= 400 %}
                 //make color set to red
                 var thisIcon = redIcon
             // else
@@ -60,12 +60,12 @@
                 var thisIcon = blueIcon
             //end if
             {% endif %}
-            L.marker(['{{clinic.lat}}', '{{clinic.lon}}'],{icon: thisIcon}).addTo(map).bindPopup("<strong>{{clinic.name}}<br>{{clinic.streetAddress}}<br>{{clinic.city}},{{clinic.state}}  {{clinic.zipcode}}<br>desc: {{clinic.description}}</strong>")
+            L.marker(['{{clinic.lat}}', '{{clinic.lon}}'],{icon: thisIcon}).addTo(map).bindPopup("<strong>{{clinic.name}}<br>{{clinic.streetAddress}}<br>{{clinic.city}},{{clinic.state}}  {{clinic.zipcode}}<br>desc: {{clinic.description}} <br>lead pollution:{{clinic.rating}}ppm</strong>")
 
         {% endif %}
     {% endfor %}
     // this is a way to add a marker that ALWAYS shows up.
-    L.marker([37.8323039, -122.2575883]).addTo(map).bindPopup("<strong>Index</strong><br>Blue: Reading Under 80</br><br>Red: Reading At/Over 80</br>").openPopup();
+    L.marker([37.8323039, -122.2575883]).addTo(map).bindPopup("<strong>Index</strong><br>Blue: Reading Under 400ppm<br>Red: Reading At/Over 400ppm").openPopup();
 
 
 </script>

@@ -3,7 +3,7 @@
 {% block body %}
 
     <h1>Input New Lead Reading</h1>
-        <h4>If your reading is not already on the map or in our database, add your reading's info here for it to be recorded!</h4>
+        <h4>If your reading is not already on the map or in our database, add your reading's info here for it to be recorded!(soil samples only, please measure in ppm)</h4>
         <!--List all errors in a group at the top-->
         {% for field in form.errors %}
             {% for error in form.errors[field] %}
