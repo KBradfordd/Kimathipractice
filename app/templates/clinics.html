@@ -4,10 +4,10 @@
 
 <div class="row">
     <div class="col-4">
-        <h1 class="display-1">All Clinics</h1>
+        <h1 class="display-1">All Data</h1>
     </div>
     <div class="col">
-        <a href="/clinic/new" class="btn btn-primary btn-sm mt-5" role="button">New Clinic</a>
+        <a href="/clinic/new" class="btn btn-primary btn-sm mt-5" role="button">New Reading</a>
     </div>
 </div>
 
@@ -54,11 +54,11 @@
                 {% endif %}
                 {{clinic.description}}
             </div>
-            <div class="col-3 border">
+            <div class="col-2 border">
                 {% if loop.index == 1 %}
-                    <h3 class="display-0.5">lat/lon</h3>
+                    <h3 class="display-0.5">Rating</h3>
                 {% endif %}
-                {{clinic.lat}}/{{clinic.lon}}
+                {{clinic.rating}}
             </div>
         </div>
     {% endfor %}

@@ -43,9 +43,9 @@ def sleepNew():
         startDT = dt.datetime.combine(form.sleep_date.data, form.starttime.data)
         endDT = dt.datetime.combine(form.wake_date.data, form.endtime.data)
         diff = endDT - startDT
-        hours = diff.seconds/60/60
+        hoursvariable = diff.seconds/60/60
         newSleep = Sleep(
-            hours = hours,
+            hours = hoursvariable,
             sleeper = current_user,
             rating = form.rating.data,
             start = startDT,

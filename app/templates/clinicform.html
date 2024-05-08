@@ -2,8 +2,8 @@
 
 {% block body %}
 
-    <h1>Input New Clinic</h1>
-        <h4>If your clinic is not already in our database, add your clinic's info here for it to show up!</h4>
+    <h1>Input New Lead Reading</h1>
+        <h4>If your reading is not already on the map or in our database, add your reading's info here for it to be recorded!</h4>
         <!--List all errors in a group at the top-->
         {% for field in form.errors %}
             {% for error in form.errors[field] %}
@@ -25,6 +25,10 @@
         <p>
             {{ form.description.label }}<br>
             {{ form.description(size=64) }}<br>
+        </p>
+        <p>
+            {{ form.rating.label }}<br>
+            {{ form.rating(size=64) }}<br>
         </p>
         <p>
             {{ form.submit() }}<br>

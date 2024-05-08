@@ -93,6 +93,7 @@ class Clinic(Document):
     description = StringField()
     lat = FloatField()
     lon = FloatField()
+    rating = IntField()
     
     meta = {
         'ordering': ['-createdate']

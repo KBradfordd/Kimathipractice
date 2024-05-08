@@ -52,4 +52,5 @@ class ClinicForm(FlaskForm):
     state = StringField('State', validators=[DataRequired()])
     zipcode = StringField('Zipcode',validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
+    rating = IntegerField("What is the lead concentration?", validators=[NumberRange(min=0,max=100, message="Enter a number between 0 and 100.")])
     submit = SubmitField('Submit')

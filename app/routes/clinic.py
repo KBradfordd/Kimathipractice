@@ -77,9 +77,15 @@ def clinicNew():
     form = ClinicForm()
 
     if form.validate_on_submit():
+        # if rating > 50:
+            # color = "red"
+        # elif 20 < rating <50: color= blue
+        # else color = green
+    
 
         newClinic = Clinic(
             name = form.name.data,
+            rating = form.rating.data,
             streetAddress = form.streetAddress.data,
             city = form.city.data,
             state = form.state.data,
@@ -111,6 +117,7 @@ def clinicEdit(clinicID):
     if form.validate_on_submit():
         editClinic.update(
             name = form.name.data,
+            rating = form.rating.data,
             streetAddress = form.streetAddress.data,
             city = form.city.data,
             state = form.state.data,
@@ -122,6 +129,7 @@ def clinicEdit(clinicID):
         return redirect(url_for('clinic',clinicID=clinicID))
 
     form.name.data = editClinic.name
+    form.rating.data = editClinic.rating
     form.streetAddress.data = editClinic.streetAddress
     form.city.data = editClinic.city
     form.state.data = editClinic.state
